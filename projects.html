@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital and Interaction Design Works</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="center-text">
+        <h1>Digital and Interaction Design Works</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="center-text">1. Wings & Wanes</h2> 
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/wings_wanes_interaction.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="center-text">2. Echoes of Silent Heart</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/echoes_of_silent_heart.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="center-text">3. Portfolio</h2>
+            <div class="carousel">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <div class="carousel-inner">
+                    <img class="carousel-item" src="images/image1.jpg" alt="Image 1">
+                    <img class="carousel-item" src="images/image2.jpg" alt="Image 2">
+                    <img class="carousel-item" src="images/image3.jpg" alt="Image 3">
+                </div>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

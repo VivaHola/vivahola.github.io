@@ -1,25 +1,26 @@
-// scripts.js
-let currentIndex = 0;
+let currentSlide = 0;
+
+function showSlide(index) {
+    const items = document.querySelectorAll('.carousel-item');
+    if (index >= items.length) {
+        currentSlide = items.length - 1; // Stay on the last slide
+    } else if (index < 0) {
+        currentSlide = 0; // Stay on the first slide
+    } else {
+        currentSlide = index;
+    }
+    items.forEach((item, i) => {
+        item.classList.toggle('active', i === currentSlide);
+    });
+}
 
 function changeSlide(direction) {
-    const slides = document.querySelectorAll('.carousel-item');
-    currentIndex += direction;
-
-    if (currentIndex >= slides.length) {
-        currentIndex = 0;
-    } else if (currentIndex < 0) {
-        currentIndex = slides.length - 1;
+    const items = document.querySelectorAll('.carousel-item');
+    const nextSlide = currentSlide + direction;
+    if (nextSlide >= 0 && nextSlide < items.length) {
+        showSlide(nextSlide);
     }
-
-    updateSlidePosition();
 }
 
-function updateSlidePosition() {
-    const slides = document.querySelector('.carousel-inner');
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-// Optional: Auto slide every 5 seconds
-// setInterval(() => {
-//     changeSlide(1);
-// }, 5000);
+// Initialize first slide
+showSlide(currentSlide);
